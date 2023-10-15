@@ -1,6 +1,7 @@
 # from util.save_response_in_json import save_response_in_json
 # from util.extract_id_from_json_to_csv import extract_id_from_json_to_csv
 from fetch.get_user import get_user
+from fetch.update_user import update_user
 from etl_util.extract import extract
 
 from util.generate_ai_news import generate_ai_news
@@ -37,3 +38,5 @@ for user in users:
             "description": news,
         }
     )
+    sucess = update_user(user, USERS_ENDPOINT)
+    print(f"User {user['id']} updated with sucess" if sucess else "Error")
