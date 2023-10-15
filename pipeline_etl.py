@@ -40,3 +40,4 @@ for user in users:
     )
     sucess = update_user(user, USERS_ENDPOINT)
     print(f"User {user['id']} updated with sucess" if sucess else "Error")
+    print(user)
